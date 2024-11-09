@@ -66,7 +66,6 @@ export default function App() {
             <div className="h-[20vh] flex flex-col">
               <div className="h-1/2 flex items-center justify-center border-b border-gray-200">
                 <div className="text-center">
-                  <h2 className={`text-sm font-medium mb-2 ${theme.text.secondary(isGreenMode)}`}>Carbon Clock</h2>
                   <climate-clock />
                 </div>
               </div>
