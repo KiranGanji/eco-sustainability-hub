@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useGreenMode } from '../context/GreenModeContext';
 import { Layout } from './shared/Layout';
 import { Card } from './shared/Card';
@@ -50,6 +50,10 @@ export function CarbonCalculator() {
   const [humanValues, setHumanValues] = useState<{ id: string; value: number }[]>(humanActivities.map((a) => ({ id: a.id, value: 0 }))); // Initialize with zero values
   const [industryValues, setIndustryValues] = useState<{ id: string; value: number }[]>(industryActivities.map((a) => ({ id: a.id, value: 0 }))); // Initialize with zero values
   const { isGreenMode } = useGreenMode();
+  
+  // States for triggering blink
+  const [blinkHuman, setBlinkHuman] = useState(false);
+  const [blinkIndustry, setBlinkIndustry] = useState(false);
 
   const saveActivityValue = () => {
     if (!selectedActivity || !activityValue) return;
@@ -60,10 +64,12 @@ export function CarbonCalculator() {
       setHumanValues((prev) =>
         prev.map((entry) => (entry.id === selectedActivity ? { ...entry, value: activityValue } : entry))
       );
+      setBlinkHuman(true);  // Trigger blink for Human
     } else {
       setIndustryValues((prev) =>
         prev.map((entry) => (entry.id === selectedActivity ? { ...entry, value: activityValue } : entry))
       );
+      setBlinkIndustry(true);  // Trigger blink for Industry
     }
   };
 
@@ -93,6 +99,17 @@ export function CarbonCalculator() {
   const selectedActivityData = [...humanActivities, ...industryActivities].find(
     (activity) => activity.id === selectedActivity
   );
+
+  // Trigger the blinking effect when total footprint changes
+  useEffect(() => {
+    if (blinkHuman || blinkIndustry) {
+      const timer = setTimeout(() => {
+        setBlinkHuman(false);
+        setBlinkIndustry(false);
+      }, 1000); // Blink duration of 1 second
+      return () => clearTimeout(timer); // Clean up the timeout
+    }
+  }, [blinkHuman, blinkIndustry]);
 
   return (
     <Layout title="Carbon Footprint Calculator" description="Calculate your carbon footprint by category">
@@ -132,10 +149,12 @@ export function CarbonCalculator() {
               </div>
             )}
 
-            {/* Total Human Footprint in Red */}
+            {/* Total Human Footprint in Red with Blinking Effect */}
             <div className="mt-4">
               <h3 className="text-md font-semibold">Total Human Footprint</h3>
-              <p className="text-sm font-medium text-red-500">
+              <p
+                className={`text-sm font-bold text-yellow-500 ${blinkHuman ? 'animate-blink highlight' : ''}`}
+              >
                 {humanTotalFootprint.toFixed(2)} kg CO₂
               </p>
             </div>
@@ -213,10 +232,12 @@ export function CarbonCalculator() {
               </div>
             )}
 
-            {/* Total Industry Footprint in Red */}
+            {/* Total Industry Footprint in Red with Blinking Effect */}
             <div className="mt-4">
               <h3 className="text-md font-semibold">Total Industry Footprint</h3>
-              <p className="text-sm font-medium text-red-500">
+              <p
+                className={`text-sm font-bold text-yellow-500 ${blinkIndustry ? 'animate-blink highlight' : ''}`}
+              >
                 {industryTotalFootprint.toFixed(2)} kg CO₂
               </p>
             </div>
