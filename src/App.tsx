@@ -59,18 +59,18 @@ export default function App() {
 
         <div className="flex">
           <div className="w-[10%] h-screen fixed left-0 flex items-center justify-center border-r border-gray-200">
-            <span className={`text-sm transform -rotate-90 ${theme.text.muted(isGreenMode)}`}>Blank Space</span>
+            <span className={`text-sm transform -rotate-90 ${theme.text.muted(isGreenMode)}`}></span>
           </div>
 
           <div className="w-[80%] mx-auto">
             <div className="h-[20vh] flex flex-col">
-              <div className="h-1/2 flex items-center justify-center border-b border-gray-200">
+              <div className="flex items-center justify-center border-b border-gray-200">
                 <div className="text-center">
                   <climate-clock />
                 </div>
               </div>
               <div className="h-1/2 flex items-center justify-center">
-                <span className={`text-sm ${theme.text.muted(isGreenMode)}`}>Blank Space</span>
+                <span className={`text-sm ${theme.text.muted(isGreenMode)}`}></span>
               </div>
             </div>
 
@@ -122,7 +122,7 @@ export default function App() {
           </div>
 
           <div className="w-[10%] h-screen fixed right-0 flex items-center justify-center border-l border-gray-200">
-            <span className={`text-sm transform rotate-90 ${theme.text.muted(isGreenMode)}`}>Blank Space</span>
+            <span className={`text-sm transform rotate-90 ${theme.text.muted(isGreenMode)}`}></span>
           </div>
         </div>
 
