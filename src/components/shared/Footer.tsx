@@ -25,7 +25,7 @@ export function Footer() {
           </h3>
           <button 
             className={`px-4 py-2 rounded-lg ${theme.button.primary(isGreenMode)}`}
-            onClick={() => window.open('#feedback', '_blank')}
+            onClick={() => window.open('https://forms.gle/SvbYybzkzi89KB2i9', '_blank')}
           >
             Share Feedback
           </button>
@@ -36,7 +36,7 @@ export function Footer() {
             Contact
           </h3>
           <p className={theme.text.secondary(isGreenMode)}>
-            Email: contact@climatechange.org
+            Email: aiknresg@proton.me
           </p>
         </div>
 
