@@ -25,13 +25,33 @@ export default function App() {
   ];
 
   useEffect(() => {
+    // Create the script element
     const script = document.createElement('script');
     script.src = 'https://climateclock.world/widget-v2.js';
     script.async = true;
+  
+    // Append the script to the document body
     document.body.appendChild(script);
-    
+  
+    // Function to create and insert the <climate-clock> element
+    const insertClimateClock = () => {
+      const container = document.getElementById('climate-clock-container');
+      if (container) {
+        const climateClock = document.createElement('climate-clock');
+        container.appendChild(climateClock);
+      }
+    };
+  
+    // Insert the <climate-clock> element once the script is loaded
+    script.onload = insertClimateClock;
+  
+    // Cleanup function to remove the script and the widget
     return () => {
       document.body.removeChild(script);
+      const container = document.getElementById('climate-clock-container');
+      if (container) {
+        container.innerHTML = '';
+      }
     };
   }, []);
 
@@ -66,7 +86,7 @@ export default function App() {
             <div className="h-[20vh] flex flex-col">
               <div className="flex items-center justify-center border-b border-gray-200">
                 <div className="text-center">
-                  <climate-clock />
+                  <div id="climate-clock-container" className="text-center"></div>
                 </div>
               </div>
               <div className="h-1/2 flex items-center justify-center">
