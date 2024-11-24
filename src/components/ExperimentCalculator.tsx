@@ -36,7 +36,7 @@ const experimentGroups: ExperimentGroup[] = [
       { icon: "🍂", title: "Leaf Composting", description: "Create leaf mold from fallen leaves", impact: "Natural soil enrichment and waste reduction" }
     ],
     calculators: [
-      { name: "Tree Carbon Calculator", url: "https://example.com/tree-calculator", description: "Calculate the carbon absorption of trees." }
+      { name: "i-Tree Carbon Calculator", url: "https://planting.itreetools.org/", description: "US specific Calculator - for calculating carbon sequestration by trees" }
     ]
   },
   {
@@ -51,7 +51,7 @@ const experimentGroups: ExperimentGroup[] = [
       { icon: "🌾", title: "Crop Rotation", description: "Implement crop rotation system", impact: "Maintains soil fertility naturally" }
     ],
     calculators: [
-      { name: "Soil Health Calculator", url: "https://example.com/soil-calculator", description: "Assess soil health and management practices." }
+      { name: "COMET-Farm", url: "https://comet-farm.com/login", description: "US specific Land, Animal Agriculture, AgroForestry, Forestry carbon calculator, Registration required" }
     ]
   },
   {
@@ -63,7 +63,8 @@ const experimentGroups: ExperimentGroup[] = [
       { icon: "🐝", title: "Bee Haven", description: "Create bee-friendly gardens", impact: "Supports pollinator populations" }
     ],
     calculators: [
-      { name: "Biodiversity Impact Calculator", url: "https://example.com/biodiversity-calculator", description: "Calculate the impact of biodiversity efforts." }
+      { name: "Biodiversity Calculator", url: "https://www.biodiversity-metrics.org/metrics-and-methods.html", description: "Measure biodiversity impact on carbon" },
+      { name: "Ecosystem Services Tool", url: "https://naturalcapitalproject.stanford.edu/software/invest", description: "Calculate biodiversity benefits" }
     ]
   },
   {
@@ -74,8 +75,10 @@ const experimentGroups: ExperimentGroup[] = [
       { icon: "⚡", title: "Energy Monitoring", description: "Track and optimize home energy use", impact: "Reduces household carbon footprint" },
       { icon: "🔋", title: "Smart Power", description: "Use smart power strips and timers", impact: "Reduces standby power consumption" }
     ],
-    calculators: [
-      { name: "Lifestyle Carbon Calculator", url: "https://example.com/lifestyle-calculator", description: "Calculate carbon impact of daily lifestyle choices." }
+    calculators: [  
+{ name: "Personal Carbon Calculator", url: "https://www.carbonfootprint.com/calculator.aspx", description: "Calculate lifestyle carbon impact" },
+{ name: "Diet Carbon Calculator", url: "https://www.bbc.com/future/bespoke/follow-the-food/calculate-the-environmental-footprint-of-your-food.html", description: "Measure food choices impact" },
+{ name: "EPA DIY Calculator", url: "https://www.epa.gov/energy/greenhouse-gases-equivalencies-calculator-calculations-and-references", description: "DIY US EPA Calculator Measure food choices impact" }
     ]
   },
   {
@@ -87,7 +90,7 @@ const experimentGroups: ExperimentGroup[] = [
       { icon: "📚", title: "Education", description: "Organize environmental workshops", impact: "Spreads awareness and knowledge" }
     ],
     calculators: [
-      { name: "Community Impact Calculator", url: "https://example.com/community-calculator", description: "Estimate community action's environmental impact." }
+      // { name: "Community Impact Calculator", url: "https://example.com/community-calculator", description: "Estimate community action's environmental impact." }
     ]
   },
   {
@@ -99,7 +102,7 @@ const experimentGroups: ExperimentGroup[] = [
       { icon: "🚿", title: "Water-Efficient Fixtures", description: "Install low-flow devices", impact: "Reduces water waste" }
     ],
     calculators: [
-      { name: "Water Conservation Calculator", url: "https://example.com/water-calculator", description: "Calculate water conservation efforts." }
+      { name: "Blue Carbon Calculator", url: "https://www.mass.gov/info-details/use-the-blue-carbon-calculator", description: "Calculate marine ecosystem carbon storage" }
     ]
   },
   {
@@ -111,7 +114,7 @@ const experimentGroups: ExperimentGroup[] = [
       { icon: "🔋", title: "Energy Storage", description: "Implement battery storage solutions", impact: "Optimizes renewable energy use" }
     ],
     calculators: [
-      { name: "Renewable Energy Calculator", url: "https://example.com/renewable-calculator", description: "Estimate the impact of renewable energy installations." }
+      // { name: "Renewable Energy Calculator", url: "https://example.com/renewable-calculator", description: "Estimate the impact of renewable energy installations." }
     ]
   }
 ];
