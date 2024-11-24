@@ -55,20 +55,8 @@ export default function App() {
         container.innerHTML = '';
       }
     };
-  
-  
-    // Insert the <climate-clock> element once the script is loaded
-    script.onload = insertClimateClock;
-  
-    // Cleanup function to remove the script and the widget
-    return () => {
-      document.body.removeChild(script);
-      const container = document.getElementById('climate-clock-container');
-      if (container) {
-        container.innerHTML = '';
-      }
-    };
   }, []);
+  
 
   return (
     <HelmetProvider>
