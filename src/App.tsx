@@ -30,13 +30,16 @@ export default function App() {
     script.src = 'https://climateclock.world/widget-v2.js';
     script.async = true;
   
-    // Append the script to the document body
-    document.body.appendChild(script);
+    // Check if the script is already added
+    if (!document.querySelector('script[src="https://climateclock.world/widget-v2.js"]')) {
+      // Append the script to the document body if not already present
+      document.body.appendChild(script);
+    }
   
-    // Function to create and insert the <climate-clock> element
+    // Insert the <climate-clock> element if not already present
     const insertClimateClock = () => {
       const container = document.getElementById('climate-clock-container');
-      if (container) {
+      if (container && !container.querySelector('climate-clock')) {
         const climateClock = document.createElement('climate-clock');
         container.appendChild(climateClock);
       }
@@ -45,15 +48,15 @@ export default function App() {
     // Insert the <climate-clock> element once the script is loaded
     script.onload = insertClimateClock;
   
-    // Cleanup function to remove the script and the widget
+    // Cleanup function to ensure no duplication
     return () => {
-      document.body.removeChild(script);
       const container = document.getElementById('climate-clock-container');
       if (container) {
         container.innerHTML = '';
       }
     };
   }, []);
+  
 
   return (
     <HelmetProvider>
