@@ -3,6 +3,7 @@ import { HelmetProvider, Helmet } from 'react-helmet-async';
 import { clsx } from 'clsx';
 import { useGreenMode } from './context/GreenModeContext';
 import { theme } from './styles/theme';
+import { Blog } from './components/Blog';
 import { CarbonCalculator } from './components/CarbonCalculator';
 import { CarbonSinkCalculator } from './components/CarbonSinkCalculator';
 import { ExperimentCalculator } from './components/ExperimentCalculator';
@@ -21,7 +22,8 @@ export default function App() {
     { name: 'Carbon Footprint Calculator', icon: '🌡️' },
     { name: 'Carbon Sink Calculator', icon: '🌳' },
     { name: 'Experiments', icon: '🧪' },
-    { name: 'UN SDG Goals', icon: '🌍' }
+    { name: 'UN SDG Goals', icon: '🌍' },
+    { name: 'Blog', icon: '✍️' }
   ];
 
   useEffect(() => {
@@ -138,6 +140,9 @@ export default function App() {
                   </Tab.Panel>
                   <Tab.Panel>
                     <SDGContent />
+                  </Tab.Panel>
+                  <Tab.Panel>
+                    <Blog />
                   </Tab.Panel>
                 </Tab.Panels>
               </Tab.Group>
