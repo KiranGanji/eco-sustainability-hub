@@ -131,11 +131,11 @@
 
 
 import { useState } from 'react';
-import { useGreenMode } from '../context/GreenModeContext';
+// import { useGreenMode } from '../context/GreenModeContext';
 import { Layout } from './shared/Layout';
 import { Card } from './shared/Card';
 import { datasets } from '../data/datasets';
-import { theme } from '../styles/theme'
+// import { theme } from '../styles/theme'
 
 
 // Example dataset type
