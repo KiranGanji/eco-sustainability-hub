@@ -151,7 +151,7 @@ interface Dataset {
 }
 
 export function Datasets() {
-  const { isGreenMode } = useGreenMode();
+  // const { isGreenMode } = useGreenMode();
   const [data, setData] = useState(datasets);
   const [filters, setFilters] = useState<{ column: keyof Dataset; value: string }>({
     column: 'country',
