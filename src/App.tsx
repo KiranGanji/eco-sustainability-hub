@@ -6,6 +6,7 @@ import { theme } from './styles/theme';
 import { Blog } from './components/Blog';
 import { CarbonCalculator } from './components/CarbonCalculator';
 import { CarbonSinkCalculator } from './components/CarbonSinkCalculator';
+import { Datasets } from './components/Datasets';
 import { ExperimentCalculator } from './components/ExperimentCalculator';
 import { SDGContent } from './components/SDGContent';
 import { AboutContent } from './components/AboutContent';
@@ -23,7 +24,8 @@ export default function App() {
     { name: 'Carbon Sink Calculator', icon: '🌳' },
     { name: 'Experiments', icon: '🧪' },
     { name: 'UN SDG Goals', icon: '🌍' },
-    { name: 'Blog', icon: '✍️' }
+    { name: 'Blog', icon: '✍️' },
+    { name: 'Datasets', icon: '📊' }
   ];
 
   useEffect(() => {
@@ -143,6 +145,9 @@ export default function App() {
                   </Tab.Panel>
                   <Tab.Panel>
                     <Blog />
+                  </Tab.Panel>
+                <Tab.Panel>
+                    <Datasets />
                   </Tab.Panel>
                 </Tab.Panels>
               </Tab.Group>
