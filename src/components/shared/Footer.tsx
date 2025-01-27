@@ -36,7 +36,7 @@ export function Footer() {
             Contact
           </h3>
           <p className={theme.text.secondary(isGreenMode)}>
-            Email: aiknresg@proton.me
+            Email: contact@ecosustainabilityhub.com
           </p>
         </div>
 
